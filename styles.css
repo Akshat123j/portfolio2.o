@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 107, 187);
+}
+h1{
+  text-align: center;
+  z-index: 2;
+}
+.file{
+    width: 80vw;
+    height: 80vh;
+    /* background-color: white; */
+    background-image: url("1.png");
+    background-position: center;
+    box-sizing: content-box;
+    background-size:contain;
+    background-repeat: no-repeat;
+    display: flex;
+    animation: fileRotation 3s ease-in-out  1 forwards;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.content{
+
+  display: none;
+}
+.file, .content{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+}
+#cupboard, .file{
+   position: absolute;
+}
+#cupboard{
+  top:1%;
+  animation: cupboard 5s ease ;
+}
+@keyframes fileRotation {
+      0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-44deg) scale(0.02);
+    opacity: 0;
+      }
+  100% {
+    transform: rotateX(720deg) rotateY(720deg) rotateZ(690deg) scale(0.6);
+    opacity: 1;
+    display: none;
+  }
+}
+@keyframes cupboard {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    display: none;
+  }
+}
+
+.content{
+    display:flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    margin: 0;
+    padding: 0;
+}
+  .kairo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  z-index: 3;
+  animation: kairo 10s ease-out forwards;
+}
+
+.venom{
+    width: 100vw;
+    height:100vh;
+    position: relative;
+    top:0%;
+    z-index: 2;
+    animation: attack 7s ease-out 1 forwards;
+}
+@keyframes attack {
+    0%{
+        transform: scale(0.2);
+    }
+    80%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(3);
+    }
+}
+@keyframes growwidth {
+  from{
+    width: 0vw;
+  }
+    to{
+        width: 100vw;
+    }
+}
+
+@keyframes kairo{
+  from{
+    width: 0px;
+    height: 0px;
+  }
+    to{
+        width: 150px;
+        height: 150px;
+    }
+}

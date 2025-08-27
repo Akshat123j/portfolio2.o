@@ -1,0 +1,268 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(222, 56%, 12%);
+  font-family: sans-serif;
+}
+
+:root {
+  --primary: rgba(132, 141, 148, 0.5);
+}
+
+/* Navigation */
+nav {
+  background-color: var(--primary);
+  width: 100%; /* fixed from 100vw */
+  padding: 10px 0;
+}
+.popup {
+  position: fixed;
+  top: 7%;
+  left: 15%;
+  transform: translateX(-50%);
+  width: 200px;
+  max-width: 600px;
+  /* height: 200px; */
+  background-color: var(--primary);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 100;
+}
+
+.popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+nav a {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Intro section */
+.intro-section {
+  position: relative;
+  width: 100%; /* fixed from 100vw */
+  height: 80vh;
+  overflow: hidden;
+}
+
+.bg-Img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.name {
+  position: absolute;
+  top: 30%;
+  left: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 20px;
+  flex-direction: row;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: var(--primary);
+  animation: name 3s ease 1 forwards;
+}
+
+.myimg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  right: 1%;
+}
+
+.description {
+  max-width: 600px;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+/* Language grid */
+.language {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+  overflow: hidden;
+}
+
+.language div {
+  height: 100px;
+  width: 100px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: row;
+}
+
+/* Animations */
+#cs { animation: cs 1s ease-out 1 forwards; }
+#html { animation: html 1s ease-out 1 forwards; }
+#js { animation: js 1s ease-out 1 forwards; }
+#python { animation: python 1s ease-out 1 forwards; }
+#c { animation: c 1s ease-out 1 forwards; }
+#react { animation: react 1s ease-out 1 forwards; }
+#node { animation: node 1s ease-out 1 forwards; }
+#git { animation: git 1s ease-out 1 forwards; }
+#github { animation: github 1s ease-out 1 forwards; }
+
+#cs, #js, #python, #html, #c, #react, #node, #git, #github {
+  animation-play-state: paused;
+}
+
+/* Keyframes */
+@keyframes name {
+  100% { transform: translate(150%); }
+}
+
+@keyframes cs { from { transform: translate(-100%,-100%);} to { transform: translate(0,0);} }
+@keyframes html { from { transform: translate(-75%,-100%);} to { transform: translate(0,0);} }
+@keyframes js { from { transform: translate(-25%,-100%);} to { transform: translate(0,0);} }
+@keyframes python { from { transform: translate(25%,-100%);} to { transform: translate(0,0);} }
+@keyframes c { from { transform: translate(-100%,0%);} to { transform: translate(0,0);} }
+@keyframes react { from { transform: translate(-75%,0%);} to { transform: translate(0,0);} }
+@keyframes node { from { transform: translate(-25%,0%);} to { transform: translate(0,0);} }
+@keyframes git { from { transform: translate(50%,0%);} to { transform: translate(0,0);} }
+@keyframes github { from { transform: translate(100%,25%);} to { transform: translate(0,0);} }
+
+/* Other sections */
+h2 {
+  color: red;
+  font-weight: bolder;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+table {
+  border: 1px solid white;
+}
+
+td {
+  border: 1px solid white;
+}
+
+.section {
+  margin: 5px;
+  padding: 15px;
+}
+
+/* ===========================
+   Responsive tweaks
+   =========================== */
+@media (max-width: 450px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .intro-section {
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .name {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    /* transform: none; */
+    animation: noe 2s ease-out 1 forwards;
+    width: 90%;
+    margin: 16px auto;
+    padding: 12px;
+    border-radius: 20px;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .myimg {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  td, th {
+    font-size: 0.85rem;
+    word-wrap: break-word;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .language {
+    grid-template-columns: repeat(2, 1fr); /* Now works */
+    gap: 10px;
+    width: 90%;
+  }
+
+  .language div {
+    width: 100%;
+    height: 80px;
+  }
+}
+@keyframes noe {
+  from{
+    transform: translate(-100%);
+  }
+  to{
+    transform: translate(0);
+  }
+}
