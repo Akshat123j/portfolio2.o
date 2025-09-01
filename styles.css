@@ -84,7 +84,7 @@ h1{
   width: 150px;
   height: 150px;
   z-index: 3;
-  animation: kairo 10s ease-out forwards;
+  animation: kairo 7s ease-out forwards;
 }
 
 .venom{
@@ -93,7 +93,7 @@ h1{
     position: relative;
     top:0%;
     z-index: 2;
-    animation: attack 7s ease-out 1 forwards;
+    animation: attack 3s ease-out 1 forwards;
 }
 @keyframes attack {
     0%{
