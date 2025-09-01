@@ -24,7 +24,7 @@ nav {
 .popup {
   position: fixed;
   top: 7%;
-  left: 15%;
+  left: 10%;
   transform: translateX(-50%);
   width: 200px;
   max-width: 600px;
@@ -198,11 +198,18 @@ td {
     height: auto;
     min-height: 60vh;
   }
-
+.popup {
+    left: 50%;
+    width: 80%;
+    top: 20%;
+    display: block;
+    background-color:  hsl(222, 56%, 12%);
+  }
   .name {
     position: absolute;
     left: 5%;
     top: 30%;
+    display: inline-block;
     /* transform: none; */
     animation: noe 2s ease-out 1 forwards;
     width: 90%;
