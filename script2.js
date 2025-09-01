@@ -68,3 +68,13 @@ contactBtn.addEventListener("click", () => {
   closeAllPopups(isVisible ? null : contactPopup);
   if (!isVisible) contactPopup.classList.add("active");
 });
+
+//closes when click outside
+document.addEventListener("click", (e) => {
+  if (!aboutPopup.contains(e.target) && !aboutBtn.contains(e.target)) {
+    aboutPopup.classList.remove("active");
+  }
+  if (!contactPopup.contains(e.target) && !contactBtn.contains(e.target)) {
+    contactPopup.classList.remove("active");
+  }
+});
